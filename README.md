@@ -21,7 +21,6 @@ Este projeto é um sistema de **cadastro e login de usuários**, desenvolvido em
 - Login de usuários
 - verificação se a senha criada no cadastro é maior que 6 digitos.
 - verificação se a senha está correta.
-- Hash de senha com `make_password` / `check_password`
 - Gerenciamento de sessões com Django.
 - Redirecionamento para o login após cadastro.
 - Django Admin habilitado.
@@ -32,13 +31,13 @@ Este projeto é um sistema de **cadastro e login de usuários**, desenvolvido em
 
 ### 🔑 Tela de Login
 
-![Tela de Login](media/fotos/login.gif)
+![Tela de Login](media/login.gif)
 
 ---
 
 ### 📝 Tela de Cadastro
 
-![Tela de Cadastro](media/fotos/cadastro.gif)
+![Tela de Cadastro](media/cadastro.gif)
 
 ---
 
