@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% load static %}
+{% block 'body' %}
+<div class="flex min-h-screen bg-grey-600">
+    <div class="flex flex-1 flex-col justify-center px-4 py-12 sm:px-6 lg:flex-none lg:px-20 xl:px-24">
+      <div class="mx-auto w-full max-w-sm lg:w-96">
+        <div>
+          <img class="h-15 w-auto" src="{% static 'logo.png' %}" alt="Your Company">
+          <h2 class="mt-4 text-2xl/9 font-bold tracking-tight text-black-100">Entre em sua conta</h2>
+          <p class="mt-2 text-sm/6 text-black-500">
+            Não tem conta?
+            <a href="{% url 'cadastro' %}" class="font-semibold text-green-600 hover:text-green-400">Crie sua conta aqui</a>
+          </p>
+
+          {% if messages %}
+              {% for message in messages %}
+                  <div class="rounded-md {{message.tags}} mt-4">
+                      <div class="flex">
+                          <div class="ml-3 py-4">
+                              {{message}}
+
+                          </div>
+
+                      </div>
+                  </div>
+              {% endfor %}
+          {% endif %}
+        </div>
+  
+        <div class="mt-8">
+          <div>
+            <form action="{% url 'login' %}" method="POST" class="space-y-6">{% csrf_token %}
+              <div>
+                <label class="block text-sm/6 font-medium text-black-500">Username</label>
+                <div class="mt-2">
+                    <input type="text" name="username" required class="block w-full rounded-md bg-gray-600/5 px-3 py-1.5 text-base text-black outline outline-1 -outline-offset-1 outline-black/15 placeholder:text-gray-500 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-green-600 sm:text-sm/6">
+                  </div>
+              </div>
+  
+              <div>
+                <label for="password" class="block text-sm/6 font-medium text-black-500">Senha</label>
+                <div class="mt-2">
+                    <input type="password" name="senha" required class="block w-full rounded-md bg-gray-600/5 px-3 py-1.5 text-base text-black outline outline-1 -outline-offset-1 outline-black/15 placeholder:text-gray-500 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-green-600 sm:text-sm/6">
+                  </div>
+              </div>
+  
+  
+              <div>
+                <button type="submit" class="flex w-full justify-center cursor-pointer rounded-md bg-green-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-sm hover:bg-igreen-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Entrar</button>
+              </div>
+            </form>
+          </div>
+  
+          
+        </div>
+      </div>
+    </div>
+    <div class="relative hidden w-0 flex-1 lg:block">
+      <img class="absolute inset-0 size-full object-cover" src="https://img.freepik.com/fotos-gratis/pessoas-de-tecnologia-tentando-alcancar-metas-ambiciosas-de-sustentabilidade_23-2150950165.jpg?t=st=1743632291~exp=1743635891~hmac=5e25adc6ddf9e339568a7a91d4f526f71c9672990821bf163b8d0fa990cb83e3&w=996" alt="">
+     
+    </div>
+  </div>
+
+{% endblock 'body' %}
